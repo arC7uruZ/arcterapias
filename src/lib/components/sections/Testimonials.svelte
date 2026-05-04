@@ -115,8 +115,8 @@
         <!-- Slider -->
         <div class="testimonials-track relative overflow-hidden">
             <div
-                class="flex gap-6 transition-transform duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)]"
-                style="transform: translateX(calc(-{activeIndex} * (100% / 3 + 8px)))"
+                class="testimonials-flex flex gap-6 transition-transform duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)]"
+                style="transform: translateX(calc(-{activeIndex} * var(--slide-size)))"
             >
                 {#each testimonials as t, i}
                     <article
@@ -211,3 +211,19 @@
         </div>
     </div>
 </section>
+
+<style>
+    .testimonials-flex {
+        --slide-size: calc(100% + 24px);
+    }
+    @media (min-width: 640px) {
+        .testimonials-flex {
+            --slide-size: calc(50% + 12px);
+        }
+    }
+    @media (min-width: 1024px) {
+        .testimonials-flex {
+            --slide-size: calc(100% / 3 + 8px);
+        }
+    }
+</style>
