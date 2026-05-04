@@ -5,6 +5,12 @@
     /** @type {HTMLElement | undefined} */
     let heroRef = $state();
 
+    let stats = [
+        { n: "10+", label: "Anos de experiência" },
+        { n: "500+", label: "Vidas transformadas" },
+        { n: "TCC", label: "Abordagem" },
+    ];
+
     onMount(() => {
         /** @type {(() => void) | undefined} */
         let cleanup;
@@ -23,7 +29,6 @@
             gsap.to(".blob-1", {
                 x: 40,
                 y: -30,
-                rotation: 20,
                 duration: 9,
                 repeat: -1,
                 yoyo: true,
@@ -32,7 +37,6 @@
             gsap.to(".blob-2", {
                 x: -35,
                 y: 40,
-                rotation: -15,
                 duration: 11,
                 repeat: -1,
                 yoyo: true,
@@ -42,7 +46,6 @@
             gsap.to(".blob-3", {
                 x: 20,
                 y: 30,
-                rotation: 10,
                 duration: 8,
                 repeat: -1,
                 yoyo: true,
@@ -52,7 +55,6 @@
             gsap.to(".blob-4", {
                 x: -25,
                 y: -20,
-                rotation: -8,
                 duration: 13,
                 repeat: -1,
                 yoyo: true,
@@ -77,7 +79,7 @@
     });
 </script>
 
-<section bind:this={heroRef} id="inicio" class="bg-cream relative flex min-h-screen items-center overflow-hidden pt-24">
+<section id="inicio" class="bg-cream relative flex min-h-screen items-center overflow-hidden pt-24">
     <!-- Grain overlay -->
     <div class="grain-overlay pointer-events-none absolute inset-0 z-10 opacity-[0.03]"></div>
 
@@ -97,20 +99,11 @@
 
     <!-- Círculo decorativo -->
     <div class="absolute top-1/2 right-[8%] hidden -translate-y-1/2 lg:block">
-        <div class="relative h-[500px] w-[500px]">
+        <div class="relative size-125">
             <div class="border-terra/20 absolute inset-0 rounded-full border"></div>
             <div class="border-terra/10 absolute inset-8 rounded-full border"></div>
             <div class="bg-cream-dark absolute inset-16 overflow-hidden rounded-full">
-                <div class="flex h-full w-full items-end justify-center">
-                    <svg viewBox="0 0 300 380" class="h-[90%] w-auto" fill="none">
-                        <ellipse cx="150" cy="100" rx="55" ry="55" fill="#c45c2a" opacity="0.25" />
-                        <path
-                            d="M60 380 C60 260 90 230 150 220 C210 230 240 260 240 380Z"
-                            fill="#c45c2a"
-                            opacity="0.18"
-                        />
-                    </svg>
-                </div>
+                <img src="hero.jpg" alt="dra ana with her book" class="size-full object-cover object-top" />
             </div>
             <div class="bg-warm-white shadow-dark/5 absolute bottom-10 left-0 rounded-2xl px-5 py-3 shadow-lg">
                 <p class="font-accent text-terra text-xs font-semibold tracking-widest uppercase">CRP 00/00000</p>
@@ -175,15 +168,15 @@
                 <Button href="#contato" variant="primary" size="lg">Agende sua Consulta</Button>
                 <a
                     href="#sobre"
-                    class="font-accent text-dark/60 hover:text-terra text-sm font-medium tracking-widest uppercase transition-colors"
+                    class="px-8 sm:px-0 py-4 font-accent text-dark/60 hover:text-terra text-sm font-medium tracking-widest uppercase transition-colors"
                 >
                     Conheça mais →
                 </a>
             </div>
 
             <!-- Stats -->
-            <div class="hero-cta border-dark/10 mt-16 flex gap-10 border-t pt-8">
-                {#each [{ n: "10+", label: "Anos de experiência" }, { n: "500+", label: "Vidas transformadas" }, { n: "TCC", label: "Abordagem" }] as stat}
+            <div class="hero-cta border-dark/10 mt-16 flex gap-6 sm:gap-10 border-t p-8 flex-col sm:flex-row">
+                {#each stats as stat}
                     <div>
                         <p class="font-display text-terra text-3xl font-semibold">{stat.n}</p>
                         <p class="font-accent text-dark/50 text-xs tracking-wider uppercase">{stat.label}</p>
@@ -194,7 +187,7 @@
     </div>
 
     <!-- Indicador de scroll -->
-    <div class="hero-scroll absolute bottom-8 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2">
+    <div class="hero-scroll absolute bottom-8 right-10 flex -translate-x-1/2 flex-col items-center gap-2">
         <span class="font-accent text-dark/30 text-[10px] tracking-[0.2em] uppercase">Scroll</span>
         <div class="border-dark/20 h-10 w-5 rounded-full border p-1">
             <div class="scroll-dot bg-terra mx-auto h-1.5 w-1.5 rounded-full"></div>

@@ -67,16 +67,17 @@
             <div class="about-image relative">
                 <div class="border-terra/20 absolute -top-6 -left-6 h-full w-full rounded-3xl border"></div>
                 <div class="bg-cream-dark relative aspect-[3/4] overflow-hidden rounded-2xl">
-                    <div class="from-cream to-cream-dark flex h-full w-full items-end justify-center bg-gradient-to-b">
-                        <svg viewBox="0 0 400 500" class="h-[88%] w-auto" fill="none">
-                            <ellipse cx="200" cy="145" rx="75" ry="75" fill="#c45c2a" opacity="0.3" />
-                            <path
-                                d="M60 500 C60 330 115 290 200 275 C285 290 340 330 340 500Z"
-                                fill="#c45c2a"
-                                opacity="0.22"
-                            />
-                        </svg>
-                    </div>
+                    <!-- <div class="from-cream to-cream-dark flex h-full w-full items-end justify-center bg-gradient-to-b"> -->
+                    <!--     <svg viewBox="0 0 400 500" class="h-[88%] w-auto" fill="none"> -->
+                    <!--         <ellipse cx="200" cy="145" rx="75" ry="75" fill="#c45c2a" opacity="0.3" /> -->
+                    <!--         <path -->
+                    <!--             d="M60 500 C60 330 115 290 200 275 C285 290 340 330 340 500Z" -->
+                    <!--             fill="#c45c2a" -->
+                    <!--             opacity="0.22" -->
+                    <!--         /> -->
+                    <!--     </svg> -->
+                    <!-- </div> -->
+                    <img src="hero_2.jpg" alt="">
                     <div class="bg-warm-white/90 absolute right-6 bottom-6 rounded-2xl px-5 py-4 backdrop-blur-sm">
                         <p class="font-accent text-terra text-xs font-semibold tracking-widest uppercase">
                             Psicóloga Clínica
