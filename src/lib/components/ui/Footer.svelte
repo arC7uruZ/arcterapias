@@ -1,5 +1,13 @@
 <script>
   const currentYear = new Date().getFullYear();
+
+  const navLinks = [
+    { label: 'Sobre', href: '#sobre' },
+    { label: 'Serviços', href: '#servicos' },
+    { label: 'Abordagem', href: '#abordagem' },
+    { label: 'Depoimentos', href: '#depoimentos' },
+    { label: 'Contato', href: '#contato' },
+  ];
 </script>
 
 <footer class="bg-dark py-16">
@@ -21,13 +29,13 @@
           Navegação
         </h4>
         <ul class="mt-4 space-y-3">
-          {#each ['Sobre', 'Serviços', 'Abordagem', 'Depoimentos', 'Contato'] as item}
+          {#each navLinks as link}
             <li>
               <a
-                href="#{item.toLowerCase()}"
+                href={link.href}
                 class="font-accent text-sm text-muted-light transition-colors hover:text-warm-white"
               >
-                {item}
+                {link.label}
               </a>
             </li>
           {/each}

@@ -29,6 +29,7 @@
     "vite": "^6.0.0"
   },
   "dependencies": {
+    "@sveltejs/adapter-static": "^3.0.10",
     "gsap": "^3.12.7"
   },
   "type": "module"
