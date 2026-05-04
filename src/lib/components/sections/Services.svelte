@@ -63,17 +63,22 @@
       const { ScrollTrigger } = await import('gsap/ScrollTrigger');
       gsap.registerPlugin(ScrollTrigger);
 
-      gsap.from('.services-header', {
+      const tween1 = gsap.from('.services-header', {
         y: 50, opacity: 0, duration: 0.9, ease: 'power3.out',
+        immediateRender: false,
         scrollTrigger: { trigger: sectionRef, start: 'top 75%', once: true },
       });
 
-      gsap.from('.service-card', {
+      const tween2 = gsap.from('.service-card', {
         y: 70, opacity: 0, duration: 0.8, stagger: 0.1, ease: 'power3.out',
+        immediateRender: false,
         scrollTrigger: { trigger: '.services-grid', start: 'top 78%', once: true },
       });
 
-      cleanup = () => ScrollTrigger.getAll().forEach((t) => t.kill());
+      cleanup = () => {
+        tween1.scrollTrigger?.kill();
+        tween2.scrollTrigger?.kill();
+      };
     })();
 
     return () => cleanup?.();
